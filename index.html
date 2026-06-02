@@ -160,7 +160,7 @@
   .mapbox{ position:relative; flex:1; border-radius:16px; background:radial-gradient(120% 120% at 50% 0%, rgba(26,42,76,.5), rgba(8,12,24,.2)); border:1px solid var(--line); padding:6px; }
   #map-svg{ width:100%; height:auto; display:block; }
   .rg{ cursor:pointer; }
-  .rg path{ transition:fill .5s, stroke .2s, filter .2s; stroke:rgba(255,255,255,.28); stroke-width:1.1; stroke-linejoin:round; }
+  .rg path{ transition:fill .5s, stroke .2s, filter .2s; stroke:rgba(255,255,255,.42); stroke-width:1.2; stroke-linejoin:round; }
   .rg:hover path{ stroke:#fff; stroke-width:2; filter:brightness(1.15) drop-shadow(0 0 8px rgba(255,255,255,.3)); }
   .rg.done path{ stroke:#fff; stroke-width:1.8; }
   .rg-label{ pointer-events:none; }
@@ -329,8 +329,8 @@
         <div class="callbanner" id="hero-call"><span class="ic">○</span><span id="hero-call-text">집계 대기</span></div>
         <div class="mapbox"><svg id="map-svg" xmlns="http://www.w3.org/2000/svg"></svg></div>
         <div class="maplegend">
-          <div class="lg"><span class="lgs" style="background:linear-gradient(90deg,var(--dpk-deep),var(--dpk-br))"></span>우상호 우세</div>
-          <div class="lg"><span class="lgs" style="background:linear-gradient(90deg,var(--ppp-deep),var(--ppp-br))"></span>김진태 우세</div>
+          <div class="lg"><span class="lgs" style="background:linear-gradient(90deg,#4a86ff,#0c4aeb)"></span>우상호 우세</div>
+          <div class="lg"><span class="lgs" style="background:linear-gradient(90deg,#ff5c62,#e0101c)"></span>김진태 우세</div>
           <div class="lg"><span class="lgs" style="background:var(--panel-3);border:1px solid var(--line-2)"></span>미개표·박빙</div>
         </div>
       </div>
@@ -552,7 +552,7 @@ const svg=$('map-svg');
 function lerp(a,b,t){ return a+(b-a)*t; }
 function hx(c){ return c.toString(16).padStart(2,'0'); }
 function mixRGB(c1,c2,t){ return '#'+hx(Math.round(lerp(c1[0],c2[0],t)))+hx(Math.round(lerp(c1[1],c2[1],t)))+hx(Math.round(lerp(c1[2],c2[2],t))); }
-const DPK_WEAK=[36,58,110],DPK_STRONG=[77,130,255], PPP_WEAK=[110,34,40],PPP_STRONG=[255,85,96];
+const DPK_WEAK=[74,134,255],DPK_STRONG=[12,74,235], PPP_WEAK=[255,92,98],PPP_STRONG=[224,16,28];
 function buildMap(){
   svg.setAttribute('viewBox',`0 0 ${GW_GEO.w} ${GW_GEO.h}`);
   let s='';
@@ -577,8 +577,8 @@ function paintMap(){
     const c=regionCalc(r.code),g=svg.querySelector(`.rg[data-code="${r.code}"]`); if(!g)return;
     const path=g.querySelector('path'),mar=g.querySelector('.rg-mar');
     let fill='var(--panel-3)',mt='—',mc='var(--muted)';
-    if(c.lead==='dpk'){ const t=Math.min(1,Math.abs(c.gapP)/22); fill=mixRGB(DPK_WEAK,DPK_STRONG,t); mt=`우 +${c.gapP.toFixed(1)}`; mc='#dbe6ff'; }
-    else if(c.lead==='ppp'){ const t=Math.min(1,Math.abs(c.gapP)/22); fill=mixRGB(PPP_WEAK,PPP_STRONG,t); mt=`김 +${Math.abs(c.gapP).toFixed(1)}`; mc='#ffe0e2'; }
+    if(c.lead==='dpk'){ const t=Math.min(1,Math.abs(c.gapP)/16); fill=mixRGB(DPK_WEAK,DPK_STRONG,t); mt=`우 +${c.gapP.toFixed(1)}`; mc='#eaf1ff'; }
+    else if(c.lead==='ppp'){ const t=Math.min(1,Math.abs(c.gapP)/16); fill=mixRGB(PPP_WEAK,PPP_STRONG,t); mt=`김 +${Math.abs(c.gapP).toFixed(1)}`; mc='#ffecec'; }
     else if(c.lead==='tie'){ fill='#33406b'; mt='박빙'; mc='#fff'; }
     path.setAttribute('fill',fill);
     g.classList.toggle('done',c.done);
