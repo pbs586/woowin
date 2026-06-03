@@ -1,11 +1,11 @@
 {
-  "_updatedAt": "2026-06-03T13:59:37.931Z",
+  "_updatedAt": "2026-06-03T14:01:37.955Z",
   "_source": "info.nec.go.kr",
   "_election": "0020260603",
   "cw": {
-    "progress": 23.14,
-    "dpk": 21831,
-    "ppp": 14134,
+    "progress": 23.48,
+    "dpk": 22060,
+    "ppp": 14401,
     "turnout": 157330
   },
   "wj": {
