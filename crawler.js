@@ -152,13 +152,15 @@ async function runOnce(page, debug){
   console.log(`  ✓ ${n}개 시군 저장 → ${OUT}  | 우상호 ${sumD.toLocaleString()} : 김진태 ${sumP.toLocaleString()}`);
   // GIT_PUSH=1 이면 data.json 을 깃허브로 자동 커밋·푸시 → GitHub Pages 자동 갱신
   if(process.env.GIT_PUSH==='1'){
+    const io={cwd:__dirname, stdio:['ignore','ignore','pipe']};
     try{
       const rel=path.relative(__dirname, OUT).replace(/\\/g,'/');
-      execSync(`git add "${rel}"`, {cwd:__dirname, stdio:'ignore'});
-      execSync(`git commit -m "data ${new Date().toISOString()}"`, {cwd:__dirname, stdio:'ignore'});
-      execSync('git push', {cwd:__dirname, stdio:'ignore'});
+      execSync(`git add "${rel}"`, io);
+      try{ execSync(`git commit -m "data ${new Date().toISOString()}"`, io); }
+      catch(e){ /* 변경 없음 → 커밋 생략하고 push 시도 안 함 */ console.log('  (변경 없음)'); return data; }
+      execSync('git push origin HEAD', io);   // upstream 없어도 동작
       console.log('  ↑ GitHub 푸시 완료 (Pages 자동 갱신)');
-    }catch(e){ console.log('  (푸시 생략: 변경 없음 또는 git 인증 확인 필요)'); }
+    }catch(e){ const m=((e.stderr&&e.stderr.toString())||e.message||'').split('\n')[0]; console.log('  (푸시 실패: '+m.slice(0,90)+')'); }
   }
   return data;
 }
