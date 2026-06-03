@@ -1,5 +1,5 @@
 {
-  "_updatedAt": "2026-06-03T18:53:39.065Z",
+  "_updatedAt": "2026-06-03T18:55:39.099Z",
   "_source": "info.nec.go.kr",
   "_election": "0020260603",
   "cw": {
@@ -21,9 +21,9 @@
     "turnout": 115761
   },
   "dh": {
-    "progress": 95.79,
-    "dpk": 22306,
-    "ppp": 22227,
+    "progress": 99.93,
+    "dpk": 23606,
+    "ppp": 22850,
     "turnout": 47110
   },
   "samc": {
