@@ -315,6 +315,9 @@
       <span class="clock" id="data-stamp" style="color:var(--dpk-br)">데이터 대기</span>
       <span class="clock" id="ts-stamp">--:--:--</span>
       <span class="live"><span class="dot"></span>LIVE 개표</span>
+      <button class="icon-btn" id="refresh-btn" title="지금 새로고침">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 4v6h-6M1 20v-6h6"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+      </button>
       <button class="icon-btn" id="theme-toggle" title="명/암 전환">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
       </button>
@@ -596,8 +599,8 @@ function raceCall(a){
     return {key:'win',cls:curD?'cb-win-d':'cb-win-p',ico:'★',text:`${curWho} 당선확정`,meta:`현재 표차 <b>${lead.toLocaleString()}표</b> > 남은 표 ${R.toLocaleString()}표 · 수학적으로 확정.`};
   // ② 당선유력 = 승률 매우 높고 충분히 개표된 뒤에만 (아직 수학적 확정 전)
   if(wp>=99&&prog>=70) return {key:'likely',cls:dd?'cb-win-d':'cb-win-p',ico:'◆',text:`${who} 당선유력`,meta:`승률 <b>${wp.toFixed(1)}%</b> · 개표율 ${prog.toFixed(1)}% · 예상 격차 ${ag.toFixed(1)}%p.`};
-  if(wp>=90&&prog>=40) return {key:'lead',cls:dd?'cb-d':'cb-p',ico:'▲',text:`${who} 우세`,meta:`승률 <b>${wp.toFixed(1)}%</b> · 개표율 ${prog.toFixed(1)}% · 예상 격차 ${ag.toFixed(1)}%p.`};
-  if(wp>=70&&prog>=10) return {key:'lean',cls:dd?'cb-d':'cb-p',ico:'△',text:`${who} 경합우세`,meta:`승률 <b>${wp.toFixed(1)}%</b> · 예상 격차 ${ag.toFixed(1)}%p · 경합권.`};
+  if(wp>=85&&prog>=15) return {key:'lead',cls:dd?'cb-d':'cb-p',ico:'▲',text:`${who} 우세`,meta:`승률 <b>${wp.toFixed(1)}%</b> · 개표율 ${prog.toFixed(1)}% · 예상 격차 ${ag.toFixed(1)}%p.`};
+  if(wp>=62&&prog>=5) return {key:'lean',cls:dd?'cb-d':'cb-p',ico:'△',text:`${who} 경합우세`,meta:`승률 <b>${wp.toFixed(1)}%</b> · 개표율 ${prog.toFixed(1)}% · 예상 격차 ${ag.toFixed(1)}%p.`};
   return {key:'toss',cls:'cb-toss',ico:'≈',text:'초박빙 경합',meta:`승률 ${(a.winD*100).toFixed(0)} : ${(a.winP*100).toFixed(0)} · 예상 격차 ${ag.toFixed(1)}%p · 예단 불가.`};
 }
 
@@ -830,6 +833,7 @@ async function loadData(){
 }
 document.querySelectorAll('th[data-sort]').forEach(th=>th.addEventListener('click',()=>{ const k=th.dataset.sort; if(sortKey===k)sortDir*=-1; else{sortKey=k;sortDir=-1;} renderTable(); }));
 $('theme-toggle').addEventListener('click',()=>{ const cur=document.documentElement.dataset.theme; document.documentElement.dataset.theme=cur==='dark'?'light':'dark'; localStorage.setItem('gw_theme',document.documentElement.dataset.theme); });
+$('refresh-btn').addEventListener('click',async()=>{ const b=$('refresh-btn'); b.style.transition='transform .6s ease'; b.style.transform='rotate(360deg)'; const ok=await loadData(); setTimeout(()=>{ b.style.transition='none'; b.style.transform='none'; },620); const el=$('data-stamp'); if(!ok&&el) el.textContent='새로고침 실패(서버 필요)'; });
 const stTheme=localStorage.getItem('gw_theme'); if(stTheme) document.documentElement.dataset.theme=stTheme;
 const navLinks=[...document.querySelectorAll('nav.chips a')],secs=['board','projection','regions'].map(id=>$(id));
 const spy=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ const id=e.target.id; navLinks.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+id)); } }),{rootMargin:'-45% 0px -50% 0px'}); secs.forEach(s=>s&&spy.observe(s));
