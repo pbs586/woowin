@@ -590,11 +590,14 @@ function aggregate(){
 function raceCall(a){
   if(a.totV===0) return {key:'toss',cls:'cb-toss',ico:'○',text:'집계 대기',meta:'데이터가 입력되면 판정합니다.'};
   const dd=a.pjGapP>0,who=dd?'우상호':'김진태',wp=Math.max(a.winD,a.winP)*100,prog=a.totalProg,ag=Math.abs(a.pjGapP);
-  let callAt=Math.min(99.5,prog+Math.max(2,(10-ag)*4));
-  if(wp>=99.5&&prog>=50) return {key:'win',cls:dd?'cb-win-d':'cb-win-p',ico:'★',text:`${who} 당선확정`,meta:`예측 승률 <b>${wp.toFixed(1)}%</b> · 개표율 ${prog.toFixed(2)}% · 사실상 확정.`};
-  if(wp>=95&&prog>=20) return {key:'likely',cls:dd?'cb-win-d':'cb-win-p',ico:'◆',text:`${who} 당선유력`,meta:`승률 <b>${wp.toFixed(1)}%</b> · 예상 격차 ${ag.toFixed(1)}%p · 콜 예상 개표율 <b>${callAt.toFixed(0)}%</b>.`};
-  if(wp>=80&&prog>=5) return {key:'lead',cls:dd?'cb-d':'cb-p',ico:'▲',text:`${who} 우세`,meta:`승률 <b>${wp.toFixed(1)}%</b> · 예상 격차 ${ag.toFixed(1)}%p · 추세 유지 시 우세.`};
-  if(wp>=60&&prog>=2) return {key:'lean',cls:dd?'cb-d':'cb-p',ico:'△',text:`${who} 경합우세`,meta:`승률 <b>${wp.toFixed(1)}%</b> · 예상 격차 ${ag.toFixed(1)}%p · 경합권.`};
+  // ① 당선확정 = 수학적 확정: 현재 표차 > 남은 표 → 남은 거 다 줘도 못 뒤집힘 (확정 투표자수 기반)
+  const lead=Math.abs(a.gapV), R=a.remainEst, curD=a.gapV>0, curWho=curD?'우상호':'김진태';
+  if(lead>R && lead>0)
+    return {key:'win',cls:curD?'cb-win-d':'cb-win-p',ico:'★',text:`${curWho} 당선확정`,meta:`현재 표차 <b>${lead.toLocaleString()}표</b> > 남은 표 ${R.toLocaleString()}표 · 수학적으로 확정.`};
+  // ② 당선유력 = 승률 매우 높고 충분히 개표된 뒤에만 (아직 수학적 확정 전)
+  if(wp>=99&&prog>=70) return {key:'likely',cls:dd?'cb-win-d':'cb-win-p',ico:'◆',text:`${who} 당선유력`,meta:`승률 <b>${wp.toFixed(1)}%</b> · 개표율 ${prog.toFixed(1)}% · 예상 격차 ${ag.toFixed(1)}%p.`};
+  if(wp>=90&&prog>=40) return {key:'lead',cls:dd?'cb-d':'cb-p',ico:'▲',text:`${who} 우세`,meta:`승률 <b>${wp.toFixed(1)}%</b> · 개표율 ${prog.toFixed(1)}% · 예상 격차 ${ag.toFixed(1)}%p.`};
+  if(wp>=70&&prog>=10) return {key:'lean',cls:dd?'cb-d':'cb-p',ico:'△',text:`${who} 경합우세`,meta:`승률 <b>${wp.toFixed(1)}%</b> · 예상 격차 ${ag.toFixed(1)}%p · 경합권.`};
   return {key:'toss',cls:'cb-toss',ico:'≈',text:'초박빙 경합',meta:`승률 ${(a.winD*100).toFixed(0)} : ${(a.winP*100).toFixed(0)} · 예상 격차 ${ag.toFixed(1)}%p · 예단 불가.`};
 }
 
