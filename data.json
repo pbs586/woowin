@@ -1,5 +1,5 @@
 {
-  "_updatedAt": "2026-06-03T14:47:38.307Z",
+  "_updatedAt": "2026-06-03T14:49:38.296Z",
   "_source": "info.nec.go.kr",
   "_election": "0020260603",
   "cw": {
@@ -15,9 +15,9 @@
     "turnout": 185486
   },
   "gn": {
-    "progress": 28.59,
-    "dpk": 20521,
-    "ppp": 12088,
+    "progress": 29.69,
+    "dpk": 20986,
+    "ppp": 12881,
     "turnout": 115761
   },
   "dh": {
@@ -75,21 +75,21 @@
     "turnout": 39965
   },
   "hs": {
-    "progress": 70.72,
-    "dpk": 10111,
-    "ppp": 10090,
+    "progress": 73.93,
+    "dpk": 10390,
+    "ppp": 10732,
     "turnout": 29256
   },
   "yw": {
-    "progress": 20.75,
-    "dpk": 2275,
-    "ppp": 2433,
+    "progress": 24.12,
+    "dpk": 2516,
+    "ppp": 2967,
     "turnout": 23335
   },
   "pc": {
-    "progress": 52.39,
-    "dpk": 7347,
-    "ppp": 6143,
+    "progress": 57.01,
+    "dpk": 7766,
+    "ppp": 6915,
     "turnout": 26211
   },
   "hch": {
