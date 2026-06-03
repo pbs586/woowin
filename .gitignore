@@ -1,0 +1,38 @@
+# ── 비밀/일회성 (API 키가 있던 파일) — 절대 커밋 금지 ──
+test_api.js
+fetch_prev.js
+
+# ── 용량/로컬 ──
+node_modules/
+.claude/
+
+# ── 원본 문서·중간 산출물(런타임 불필요) ──
+*.hwp
+guide.txt
+prev8.json
+skorea_muni.json
+gw_geo.json
+
+# ── 개발/디버그 스크립트 & 덤프 ──
+inspect*.js
+probe_turnout.js
+build_geo.js
+build_geo.py
+build_photos.js
+inspect_xlsx.js
+inspect_gap.js
+nec_post.js
+nec_report.html
+table_debug.html
+data_nec_test.json
+
+# 게시 대상: output/index.html (+ data.json)
+# 함께 올려도 되는 것: server.js, xlsx2json.js, crawler.js, *.bat, *.xlsx, package*.json
+
+# dev scratch/artifacts
+scratch/
+extract_hwp.js
+inspect2_nec.js
+inspect3_nec.js
+inspect5_nec.js
+~$*

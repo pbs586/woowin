@@ -1,0 +1,113 @@
+{
+  "_updatedAt": "2026-06-03T13:34:29.592Z",
+  "_source": "info.nec.go.kr",
+  "_election": "0020260603",
+  "cw": {
+    "progress": 13.54,
+    "dpk": 12736,
+    "ppp": 8269,
+    "turnout": 157330
+  },
+  "wj": {
+    "progress": 18.31,
+    "dpk": 13929,
+    "ppp": 19520,
+    "turnout": 185486
+  },
+  "gn": {
+    "progress": 23.52,
+    "dpk": 17361,
+    "ppp": 9454,
+    "turnout": 115761
+  },
+  "dh": {
+    "progress": 32.91,
+    "dpk": 9769,
+    "ppp": 5529,
+    "turnout": 47110
+  },
+  "samc": {
+    "progress": 34.01,
+    "dpk": 7197,
+    "ppp": 5313,
+    "turnout": 37601
+  },
+  "tb": {
+    "progress": 88.52,
+    "dpk": 9611,
+    "ppp": 10041,
+    "turnout": 22671
+  },
+  "js": {
+    "progress": 32.98,
+    "dpk": 4331,
+    "ppp": 3193,
+    "turnout": 23534
+  },
+  "sc": {
+    "progress": 47.2,
+    "dpk": 10956,
+    "ppp": 9472,
+    "turnout": 44102
+  },
+  "gs": {
+    "progress": 31.94,
+    "dpk": 3185,
+    "ppp": 2223,
+    "turnout": 17413
+  },
+  "yy": {
+    "progress": 48.78,
+    "dpk": 3807,
+    "ppp": 4874,
+    "turnout": 18213
+  },
+  "ij": {
+    "progress": 36.36,
+    "dpk": 4232,
+    "ppp": 2504,
+    "turnout": 18980
+  },
+  "hc": {
+    "progress": 37.91,
+    "dpk": 7773,
+    "ppp": 7055,
+    "turnout": 39965
+  },
+  "hs": {
+    "progress": 40.44,
+    "dpk": 6691,
+    "ppp": 4874,
+    "turnout": 29256
+  },
+  "yw": {
+    "progress": 17.92,
+    "dpk": 1919,
+    "ppp": 2153,
+    "turnout": 23335
+  },
+  "pc": {
+    "progress": 37.72,
+    "dpk": 5912,
+    "ppp": 3791,
+    "turnout": 26211
+  },
+  "hch": {
+    "progress": 32.11,
+    "dpk": 2770,
+    "ppp": 1696,
+    "turnout": 14210
+  },
+  "yg": {
+    "progress": 67.62,
+    "dpk": 4509,
+    "ppp": 3956,
+    "turnout": 12816
+  },
+  "cwn": {
+    "progress": 52.03,
+    "dpk": 7305,
+    "ppp": 4935,
+    "turnout": 24024
+  }
+}

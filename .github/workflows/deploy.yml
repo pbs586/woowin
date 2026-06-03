@@ -1,0 +1,32 @@
+name: Deploy dashboard to GitHub Pages
+
+# output/ 폴더(대시보드)를 Pages 로 배포. data.json 이 push 될 때마다 자동 갱신.
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# 빠른 연속 push 시 최신 것만 배포
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: output           # ← 대시보드가 들어있는 폴더
+      - id: deployment
+        uses: actions/deploy-pages@v4
