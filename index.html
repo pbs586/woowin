@@ -470,7 +470,7 @@
   <div class="r"><span class="l ttd">우상호</span><span id="tt-d">0 (0.0%)</span></div>
   <div class="r"><span class="l ttp">김진태</span><span id="tt-p">0 (0.0%)</span></div>
   <div class="r"><span class="l">격차</span><span id="tt-gap">—</span></div>
-  <div class="r"><span class="l">예상 최종</span><span id="tt-proj">—</span></div>
+  <div class="r"><span class="l">표차</span><span id="tt-proj">—</span></div>
 </div>
 
 <script>
@@ -803,7 +803,7 @@ function showTip(e,code){
   $('tt-nm').textContent=c.name; $('tt-prog').textContent=c.prog.toFixed(2)+'%'+(c.done?' · 완료':'');
   $('tt-d').textContent=`${c.dpk.toLocaleString()} (${c.dPct.toFixed(1)}%)`; $('tt-p').textContent=`${c.ppp.toLocaleString()} (${c.pPct.toFixed(1)}%)`;
   const g=$('tt-gap'); if(c.total===0)g.textContent='집계 전'; else if(c.lead==='tie')g.innerHTML='<span style="color:var(--gold)">박빙</span>'; else if(c.lead==='dpk')g.innerHTML=`<span class="ttd">우상호 +${c.gapP.toFixed(1)}%p</span>`; else g.innerHTML=`<span class="ttp">김진태 +${Math.abs(c.gapP).toFixed(1)}%p</span>`;
-  $('tt-proj').textContent=c.total===0?'—':`${c.projGapP>0?'우상호':'김진태'} ${Math.abs(c.projGapP).toFixed(1)}%p`;
+  $('tt-proj').innerHTML=c.total===0?'—':(c.lead==='tie'?'<span style="color:var(--gold)">박빙</span>':c.gapV>0?`<span class="ttd">우상호 +${c.gapV.toLocaleString()}표</span>`:`<span class="ttp">김진태 +${Math.abs(c.gapV).toLocaleString()}표</span>`);
   tt.classList.add('show'); const p=14; let x=e.clientX+p,y=e.clientY+p;
   if(x+tt.offsetWidth>innerWidth)x=e.clientX-tt.offsetWidth-p; if(y+tt.offsetHeight>innerHeight)y=e.clientY-tt.offsetHeight-p; tt.style.left=x+'px'; tt.style.top=y+'px';
 }
