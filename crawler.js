@@ -20,7 +20,7 @@ const path = require('path');
 const URL = 'https://info.nec.go.kr/main/showDocument.xhtml?electionId=0020260603&topMenuId=VC&secondMenuId=VCCP09';
 const ELECTION_CODE = '3';     // 시·도지사선거
 const CITY_CODE = '5200';      // 강원특별자치도
-const OUT = process.env.OUT || path.join(__dirname, 'output', 'data.json');
+const OUT = process.env.OUT || path.join(__dirname, 'data.json');
 
 // NEC 표기 시군명 → 대시보드 코드
 const NAME2CODE = {

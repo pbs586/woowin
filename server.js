@@ -9,7 +9,7 @@ const { convert, startWatch } = require('./xlsx2json.js');
 
 const PORT = 8123;
 const URL = 'http://localhost:' + PORT;
-const root = path.join(__dirname, 'output');
+const root = __dirname;
 const types = { '.html':'text/html;charset=utf-8', '.json':'application/json;charset=utf-8', '.js':'text/javascript', '.css':'text/css', '.png':'image/png', '.jpg':'image/jpeg' };
 const openBrowser = () => { if (!process.env.NO_OPEN) exec('start "" ' + URL); };
 

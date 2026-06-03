@@ -18,8 +18,8 @@ const path = require('path');
 
 const GAP_FILE  = path.join(__dirname, '개표현황.xlsx');
 const VOTE_FILE = path.join(__dirname, '투표현황 제9회 지방선거 강원도.xlsx');
-const OUT_JSON  = path.join(__dirname, 'output', 'data.json');
-const INDEX     = path.join(__dirname, 'output', 'index.html');
+const OUT_JSON  = path.join(__dirname, 'data.json');
+const INDEX     = path.join(__dirname, 'index.html');
 
 const NAME2CODE = {
   '춘천시':'cw','원주시':'wj','강릉시':'gn','동해시':'dh','태백시':'tb','속초시':'sc',

@@ -5,6 +5,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>강원특별자치도지사 개표방송 · 캠프 상황실</title>
 
+<!-- ── Open Graph / 카카오·페북 공유 미리보기 (pbs586/woowin) ── -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="제9회 지방선거 · 강원특별자치도지사 개표 현황" />
+<meta property="og:description" content="2026.06.03 강원도지사 개표방송 — 우상호 vs 김진태 · 18개 시군 실시간 개표·예측·승률" />
+<meta property="og:image" content="https://pbs586.github.io/woowin/og5.png" />
+<meta property="og:image:width" content="1728" />
+<meta property="og:image:height" content="910" />
+<meta property="og:url" content="https://pbs586.github.io/woowin/" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="제9회 지방선거 · 강원특별자치도지사 개표 현황" />
+<meta name="twitter:image" content="https://pbs586.github.io/woowin/og5.png" />
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Black+Han+Sans&family=Spline+Sans+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -103,11 +115,11 @@
     background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);
     background-size:38px 38px; mask-image:radial-gradient(circle at 50% 30%,#000,transparent 85%); }
 
-  .board-grid{ display:grid; grid-template-columns: 1fr 1.35fr 1fr; gap:22px; align-items:stretch; position:relative; }
+  .board-grid{ display:grid; grid-template-columns: 1fr 1.8fr 1fr; gap:22px; align-items:stretch; position:relative; }
   @media(max-width:1080px){ .board-grid{ grid-template-columns:1fr; } }
 
   /* candidate panel */
-  .cpanel{ position:relative; border-radius:18px; padding:24px 22px; display:flex; flex-direction:column; gap:14px;
+  .cpanel{ position:relative; border-radius:18px; padding:20px 16px; display:flex; flex-direction:column; gap:14px;
     border:1px solid var(--line-2); overflow:hidden; }
   .cpanel.dpk{ background:linear-gradient(165deg, rgba(26,86,219,.22), rgba(20,30,60,.25)); }
   .cpanel.ppp{ background:linear-gradient(165deg, rgba(224,36,36,.20), rgba(20,30,60,.25)); text-align:right; align-items:flex-end; }
@@ -120,7 +132,7 @@
 
   .chead{ display:flex; align-items:center; gap:14px; }
   .cpanel.ppp .chead{ flex-direction:row-reverse; }
-  .cava{ width:84px;height:84px;border-radius:50%;display:grid;place-items:center;font-weight:900;font-size:30px;color:#fff;position:relative;flex-shrink:0; }
+  .cava{ width:72px;height:72px;border-radius:50%;display:grid;place-items:center;font-weight:900;font-size:26px;color:#fff;position:relative;flex-shrink:0; }
   .cava img{ width:100%;height:100%;border-radius:50%;object-fit:cover;object-position:center 18%; display:block; }
   .cpanel.dpk .cava{ background:var(--dpk); box-shadow:0 0 0 3px rgba(77,130,255,.35); }
   .cpanel.ppp .cava{ background:var(--ppp); box-shadow:0 0 0 3px rgba(255,85,96,.35); }
@@ -129,13 +141,13 @@
   .cmeta{ display:flex; flex-direction:column; gap:3px; }
   .cparty{ font-family:'Spline Sans Mono',monospace; font-size:11px; letter-spacing:.1em; font-weight:600; }
   .cpanel.dpk .cparty{ color:var(--dpk-br);} .cpanel.ppp .cparty{ color:var(--ppp-br);}
-  .cname{ font-weight:900; font-size:26px; letter-spacing:-.02em; }
+  .cname{ font-weight:900; font-size:24px; letter-spacing:-.02em; }
 
-  .cpct{ font-family:'Archivo'; font-weight:900; font-size:clamp(56px,7vw,84px); line-height:.82; letter-spacing:-.03em; display:flex; align-items:baseline; gap:3px; margin-top:4px; }
+  .cpct{ font-family:'Archivo'; font-weight:900; font-size:clamp(42px, 5.2vw, 68px); line-height:.82; letter-spacing:-.03em; display:flex; align-items:baseline; gap:3px; margin-top:4px; }
   .cpanel.ppp .cpct{ justify-content:flex-end; }
   .cpct .s{ font-size:.36em; font-weight:800; color:var(--text-dim); }
   .cpanel.dpk .cpct{ color:var(--dpk-br);} .cpanel.ppp .cpct{ color:var(--ppp-br);}
-  .cvotes{ font-family:'Spline Sans Mono',monospace; font-size:13px; color:var(--text-dim); }
+  .cvotes{ font-family:'Spline Sans Mono',monospace; font-size:12px; color:var(--text-dim); }
   .cvotes b{ color:var(--text); font-weight:600; font-size:16px; }
   .cmini{ width:100%; font-family:'Spline Sans Mono',monospace; font-size:12px; color:var(--text-dim); }
   .cmini b{ color:var(--text); font-weight:600; }
@@ -148,7 +160,7 @@
 
   /* center map */
   .mapwrap{ position:relative; display:flex; flex-direction:column; gap:12px; }
-  .callbanner{ position:relative; align-self:center; display:inline-flex; align-items:center; gap:10px;
+  .callbanner{ position:absolute; top:14px; right:14px; z-index:10; display:inline-flex; align-items:center; gap:10px;
     padding:9px 20px; border-radius:100px; font-weight:900; font-size:16px; letter-spacing:-.01em;
     background:var(--panel-3); color:var(--text-dim); border:1px solid var(--line-2); transition:.3s; }
   .callbanner .ic{ font-size:14px; }
@@ -164,8 +176,8 @@
   .rg:hover path{ stroke:#fff; stroke-width:2; filter:brightness(1.15) drop-shadow(0 0 8px rgba(255,255,255,.3)); }
   .rg.done path{ stroke:#fff; stroke-width:1.8; }
   .rg-label{ pointer-events:none; }
-  .rg-name{ font-family:'Pretendard'; font-weight:800; fill:#fff; paint-order:stroke; stroke:rgba(5,8,18,.55); stroke-width:3px; }
-  .rg-mar{ font-family:'Spline Sans Mono',monospace; font-weight:600; paint-order:stroke; stroke:rgba(5,8,18,.5); stroke-width:2.6px; }
+  .rg-name{ font-family:'Pretendard'; font-weight:900; fill:#fff; paint-order: stroke fill; stroke:#050812; stroke-width:4px; letter-spacing:-0.03em; }
+  .rg-mar{ font-family:'Spline Sans Mono',monospace; font-weight:800; paint-order: stroke fill; stroke:#050812; stroke-width:3.5px; }
 
   .maplegend{ display:flex; gap:14px; justify-content:center; flex-wrap:wrap; font-size:11.5px; color:var(--text-dim); }
   .lg{ display:flex; align-items:center; gap:6px; } .lgs{ width:24px; height:11px; border-radius:3px; }
@@ -300,6 +312,7 @@
       <span class="h">제<span class="nine">9</span>회 지방선거 <b>강원특별자치도</b></span>
     </div>
     <div class="meta">
+      <span class="clock" id="data-stamp" style="color:var(--dpk-br)">데이터 대기</span>
       <span class="clock" id="ts-stamp">--:--:--</span>
       <span class="live"><span class="dot"></span>LIVE 개표</span>
       <button class="icon-btn" id="theme-toggle" title="명/암 전환">
@@ -326,8 +339,10 @@
 
       <!-- MAP -->
       <div class="mapwrap">
-        <div class="callbanner" id="hero-call"><span class="ic">○</span><span id="hero-call-text">집계 대기</span></div>
-        <div class="mapbox"><svg id="map-svg" xmlns="http://www.w3.org/2000/svg"></svg></div>
+        <div class="mapbox">
+          <div class="callbanner" id="hero-call"><span class="ic">○</span><span id="hero-call-text">집계 대기</span></div>
+          <svg id="map-svg" xmlns="http://www.w3.org/2000/svg"></svg>
+        </div>
         <div class="maplegend">
           <div class="lg"><span class="lgs" style="background:linear-gradient(90deg,#4a86ff,#0c4aeb)"></span>우상호 우세</div>
           <div class="lg"><span class="lgs" style="background:linear-gradient(90deg,#ff5c62,#e0101c)"></span>김진태 우세</div>
@@ -364,7 +379,6 @@
     <a href="#board"><span class="i">01</span> BOARD</a>
     <a href="#projection"><span class="i">02</span> PROJECTION</a>
     <a href="#regions"><span class="i">03</span> REGIONS</a>
-    <a href="#input"><span class="i">04</span> INPUT</a>
   </nav>
 
   <main>
@@ -430,45 +444,11 @@
             <th data-sort="ppp" class="num">김진태</th>
             <th class="num">득표율</th>
             <th data-sort="gap" class="num">격차</th>
-            <th data-sort="proj" class="num">예상격차</th>
             <th data-sort="swing" class="num">스윙</th>
             <th class="num">모멘텀</th>
           </tr></thead>
           <tbody id="regions-tbody"></tbody>
         </table>
-      </div>
-    </section>
-
-    <!-- INPUT -->
-    <section class="block reveal" id="input">
-      <div class="sec-head"><span class="sec-num">04</span><span class="sec-title">데이터 입력 &amp; 소스</span><span class="sec-desc">수동 입력 · 추후 크롤링 data.json 연결</span></div>
-      <div class="card input-card">
-        <div class="src-row">
-          <span class="sk">Data Source</span>
-          <button class="pill active" data-src="manual">수동 입력</button>
-          <button class="pill" data-src="json">data.json (1회)</button>
-          <button class="pill" data-src="poll">폴링(크롤러)</button>
-          <div class="fi">
-            <input type="text" id="src-url" class="mono" placeholder="./data.json" value="./data.json" style="background:var(--bg-2);color:var(--text);border:1px solid var(--line-2);border-radius:9px;padding:9px 12px;font-size:12px;width:220px;" />
-            <button class="btn" id="btn-fetch">불러오기</button>
-          </div>
-        </div>
-        <div class="input-grid">
-          <div class="field"><label>시·군</label><select id="in-region"></select></div>
-          <div class="field"><label>개표율 (%)</label><input type="number" id="in-progress" min="0" max="100" step="0.1" placeholder="0.0" /></div>
-          <div class="field"><label><span class="pt dpk"></span>우상호 득표</label><input type="number" id="in-dpk" min="0" step="1" placeholder="0" /></div>
-          <div class="field"><label><span class="pt ppp"></span>김진태 득표</label><input type="number" id="in-ppp" min="0" step="1" placeholder="0" /></div>
-          <button class="btn btn-primary" id="btn-apply">반영</button>
-          <button class="btn" id="btn-clear">지역 초기화</button>
-        </div>
-        <div class="quick">
-          <button class="btn" id="btn-demo">샘플 시나리오 주입</button>
-          <button class="btn" id="btn-snapshot">스냅샷 저장(모멘텀 기준)</button>
-          <button class="btn" id="btn-reset">전체 0 리셋</button>
-          <button class="btn" id="btn-export">JSON 내보내기</button>
-          <button class="btn" id="btn-import">JSON 불러오기</button>
-          <input type="file" id="file-import" accept="application/json" style="display:none" />
-        </div>
       </div>
     </section>
 
@@ -495,17 +475,39 @@
 const GW_GEO = {"w":1000,"h":889.9,"regions":[{"code":"gs","name":"고성군","d":"M485.9,144.3L502.7,130.8L505.3,125.3L519.6,113.0L527.8,93.0L533.7,42.8L531.9,27.8L536.3,18.2L549.1,16.0L568.9,41.3L572.8,55.2L580.1,65.5L580.1,74.5L587.3,90.0L599.4,104.2L595.1,115.8L601.0,126.5L619.8,147.5L624.4,165.6L635.0,178.8L642.6,203.4L651.6,217.9L649.5,223.9L644.9,228.9L627.3,232.2L613.4,239.1L607.3,246.7L588.1,239.6L587.0,219.6L577.7,211.3L565.0,214.6L556.2,220.5L552.4,206.3L535.4,204.9L536.0,186.4L530.9,171.0L523.0,167.7L512.3,173.2L503.1,153.7L485.9,144.3Z","cx":568.6,"cy":149.5},{"code":"yy","name":"양양군","d":"M659.9,262.0L660.1,267.4L671.4,286.3L684.8,299.6L689.4,313.8L710.2,336.5L714.4,346.7L737.7,385.1L746.1,393.9L743.1,396.9L718.8,399.1L688.8,409.4L676.7,408.9L664.3,419.2L650.8,424.6L630.0,408.7L618.4,414.7L605.2,407.6L601.7,403.9L602.3,390.1L597.3,384.6L603.4,369.8L611.7,367.3L611.4,358.5L618.3,346.8L606.0,320.5L601.1,323.1L576.5,315.3L571.9,297.2L581.9,290.0L598.2,284.6L609.5,274.5L625.8,275.1L627.9,268.9L638.5,268.5L643.4,262.2L659.9,262.0Z","cx":644.8,"cy":341.7},{"code":"ij","name":"인제군","d":"M451.3,164.4L485.9,144.3L503.1,153.7L512.3,173.2L523.0,167.7L530.9,171.0L536.0,186.4L535.4,204.9L552.4,206.3L556.2,220.5L565.0,214.6L577.7,211.3L587.0,219.6L588.1,239.6L578.6,253.0L588.2,267.4L598.0,274.6L598.2,284.6L581.9,290.0L571.9,297.2L576.5,315.3L601.1,323.1L606.0,320.5L618.3,346.8L611.4,358.5L611.7,367.3L603.4,369.8L597.3,384.6L602.3,390.1L601.7,403.9L605.2,407.6L585.5,423.4L575.9,412.2L570.5,424.6L555.6,432.6L554.8,440.2L546.9,444.4L530.4,434.6L524.5,420.2L510.6,427.6L507.5,438.5L488.1,451.5L475.9,439.9L471.3,430.3L472.8,412.1L467.4,406.4L455.6,407.2L432.7,402.2L415.4,389.0L411.0,380.0L395.6,380.7L388.6,372.8L391.2,354.7L406.5,349.2L410.9,341.6L422.6,332.6L425.3,323.8L439.4,334.3L449.0,323.5L446.8,310.8L436.7,299.4L442.8,287.4L436.2,274.5L443.5,248.9L440.5,244.6L449.4,234.6L450.5,220.1L463.0,210.7L467.1,200.4L469.2,178.7L465.6,172.9L451.3,171.8L451.3,164.4Z","cx":510.3,"cy":310.7},{"code":"yg","name":"양구군","d":"M322.9,171.8L336.4,168.8L348.8,162.8L366.4,166.3L388.7,175.4L425.6,179.1L451.3,164.4L451.3,171.8L465.6,172.9L469.2,178.7L467.1,200.4L463.0,210.7L450.5,220.1L449.4,234.6L440.5,244.6L443.5,248.9L436.2,274.5L442.8,287.4L436.7,299.4L446.8,310.8L449.0,323.5L439.4,334.3L425.3,323.8L422.6,332.6L410.9,341.6L391.5,342.3L392.3,334.6L378.9,327.9L371.0,341.7L358.8,335.7L357.0,321.9L361.6,318.0L355.6,299.0L349.1,293.8L349.7,286.0L344.1,275.4L347.4,259.1L345.1,245.3L335.2,236.4L336.1,212.4L322.9,171.8Z","cx":398.7,"cy":256.1},{"code":"hch","name":"화천군","d":"M231.0,164.5L243.1,170.7L265.4,168.5L269.6,162.9L282.5,166.0L289.7,160.3L302.9,157.3L313.5,172.8L322.9,171.8L336.1,212.4L335.2,236.4L345.1,245.3L347.4,259.1L344.1,275.4L349.7,286.0L349.1,293.8L355.6,299.0L361.6,318.0L357.0,321.9L335.3,321.7L337.3,339.6L324.1,349.1L309.9,353.2L299.5,334.7L286.0,328.5L275.3,336.3L269.6,328.8L259.8,329.8L249.2,336.3L249.3,320.5L237.9,322.0L225.7,305.8L212.8,303.7L217.5,327.9L211.0,337.6L202.8,338.9L200.8,348.9L184.3,349.8L171.8,346.2L165.7,340.7L160.4,321.8L159.8,296.4L153.9,286.9L157.8,282.1L176.2,281.5L184.9,268.9L179.7,262.9L185.6,254.6L189.1,241.1L199.4,234.9L201.6,225.0L212.8,219.4L217.6,209.4L225.4,202.8L219.5,190.5L231.0,164.5Z","cx":255,"cy":271.2},{"code":"cwn","name":"철원군","d":"M16.0,190.8L28.1,181.2L30.6,170.6L37.5,167.8L47.2,177.2L53.6,176.2L73.7,165.4L95.3,171.6L102.4,177.3L114.3,169.1L118.5,170.7L135.6,164.7L151.3,167.8L161.9,177.1L173.2,176.7L178.1,184.5L187.4,184.4L201.6,172.8L221.6,164.7L231.0,164.5L219.5,190.5L225.4,202.8L217.6,209.4L212.8,219.4L201.6,225.0L199.4,234.9L189.1,241.1L185.6,254.6L179.7,262.9L184.9,268.9L176.2,281.5L157.8,282.1L153.9,286.9L133.8,287.4L107.0,297.8L102.7,286.5L90.7,286.2L87.5,275.0L92.4,266.7L93.3,253.4L85.5,250.7L78.9,260.8L64.9,269.7L50.6,262.2L46.1,249.2L40.5,241.1L38.8,223.3L32.8,217.7L25.0,223.1L16.4,217.9L18.0,205.4L16.0,190.8Z","cx":117,"cy":219.2},{"code":"js","name":"정선군","d":"M816.2,602.8L811.4,614.2L822.0,625.1L822.5,634.8L809.5,650.2L800.9,648.0L783.8,659.4L782.9,670.5L771.4,676.5L766.7,686.0L761.5,708.5L770.5,708.8L773.4,717.9L767.5,731.1L776.1,740.8L776.1,749.1L782.5,755.4L788.3,775.4L792.3,805.4L784.4,812.6L777.1,801.0L759.2,802.0L740.1,786.2L720.4,777.8L712.5,785.8L696.5,792.7L674.4,793.7L669.8,784.5L646.4,772.0L645.2,746.8L654.3,740.7L647.3,730.5L649.4,724.3L643.2,715.9L641.4,705.4L635.6,696.9L629.8,675.9L618.5,672.7L616.0,665.3L621.2,656.9L618.7,645.9L623.5,641.1L640.2,642.3L637.2,627.5L646.2,624.1L651.6,588.4L662.5,580.4L667.6,591.1L687.7,590.9L700.9,602.1L718.5,595.9L733.6,597.7L742.8,604.1L740.7,611.2L748.0,617.8L762.4,613.1L767.7,597.4L767.0,588.5L773.6,572.6L783.2,574.1L787.2,592.7L801.5,601.0L810.1,596.3L816.2,602.8Z","cx":725.7,"cy":676.5},{"code":"pc","name":"평창군","d":"M648.5,446.8L656.0,455.1L656.7,474.6L689.0,472.8L702.3,475.2L709.4,485.9L717.0,490.0L726.6,527.9L713.2,537.6L711.2,547.3L714.6,561.5L706.4,564.9L704.0,573.1L692.1,571.3L687.7,590.9L667.6,591.1L662.5,580.4L651.6,588.4L646.2,624.1L637.2,627.5L640.2,642.3L623.5,641.1L618.7,645.9L621.2,656.9L616.0,665.3L618.5,672.7L629.8,675.9L635.6,696.9L641.4,705.4L643.2,715.9L649.4,724.3L647.3,730.5L654.3,740.7L645.2,746.8L637.7,736.4L620.1,737.3L612.3,728.8L597.9,726.4L597.3,717.2L590.6,709.7L579.0,706.1L573.8,709.3L568.8,731.5L558.0,734.6L552.1,725.3L540.6,727.8L537.4,720.4L534.5,687.5L524.7,675.3L512.4,671.3L504.7,650.7L503.8,633.6L513.0,628.3L517.1,620.7L526.8,615.0L528.1,600.7L524.9,583.8L520.6,578.7L517.0,556.2L507.8,550.9L515.6,544.9L517.4,530.4L529.4,517.5L537.3,518.4L552.8,513.1L561.5,517.3L576.7,519.1L589.0,512.3L593.0,497.2L603.7,493.8L622.7,496.4L622.1,480.6L631.2,464.5L631.3,459.3L642.8,454.6L648.5,446.8Z","cx":608.7,"cy":603.6},{"code":"yw","name":"영월군","d":"M512.4,671.3L524.7,675.3L534.5,687.5L537.4,720.4L540.6,727.8L552.1,725.3L558.0,734.6L568.8,731.5L573.8,709.3L579.0,706.1L590.6,709.7L597.3,717.2L597.9,726.4L612.3,728.8L620.1,737.3L637.7,736.4L645.2,746.8L646.4,772.0L669.8,784.5L674.4,793.7L696.5,792.7L712.5,785.8L720.4,777.8L740.1,786.2L759.2,802.0L777.1,801.0L784.4,812.6L780.0,825.4L773.8,831.0L779.9,843.1L774.6,853.2L779.9,859.2L788.9,856.7L783.1,868.6L761.8,864.7L753.4,850.6L745.5,850.9L735.4,845.4L721.2,861.8L725.4,873.9L702.7,871.7L694.1,864.2L668.0,852.2L652.4,850.5L639.7,843.9L629.3,844.1L619.4,836.9L618.4,831.2L607.3,827.7L600.8,833.3L580.2,831.9L568.7,823.2L570.5,813.2L543.1,807.2L526.4,820.1L515.8,813.0L512.0,805.9L517.0,799.5L538.2,786.0L541.5,775.9L533.8,771.6L513.9,780.0L506.9,769.2L496.5,769.1L484.8,757.8L491.8,742.1L483.3,732.0L471.4,742.0L461.8,743.8L448.3,739.5L447.4,728.9L447.5,721.1L454.9,714.1L472.8,717.8L478.4,707.5L475.5,682.3L488.2,678.4L500.0,682.0L507.8,679.2L512.4,671.3Z","cx":604.9,"cy":778.1},{"code":"hs","name":"횡성군","d":"M507.8,550.9L517.0,556.2L520.6,578.7L524.9,583.8L528.1,600.7L526.8,615.0L517.1,620.7L513.0,628.3L503.8,633.6L504.7,650.7L512.4,671.3L507.8,679.2L500.0,682.0L488.2,678.4L475.5,682.3L478.4,707.5L472.8,717.8L454.9,714.1L447.5,721.1L447.4,728.9L422.9,724.1L414.4,711.1L416.5,698.9L431.3,688.6L429.2,679.4L440.2,672.1L423.9,650.1L399.1,644.6L377.4,645.9L369.6,626.5L359.8,628.3L357.6,635.4L344.8,639.9L340.9,649.9L341.1,675.9L333.3,675.6L330.3,658.0L321.7,651.5L313.3,656.4L310.9,641.2L301.6,625.8L301.3,618.0L315.3,602.3L330.7,600.1L333.8,592.4L347.2,584.4L352.2,568.9L377.6,560.3L385.7,547.0L406.6,559.7L427.3,547.3L432.1,538.8L443.8,534.0L449.4,524.2L461.0,527.2L480.2,541.7L486.3,539.5L495.6,552.4L507.8,550.9Z","cx":424.8,"cy":626.6},{"code":"hc","name":"홍천군","d":"M395.6,380.7L411.0,380.0L415.4,389.0L432.7,402.2L455.6,407.2L467.4,406.4L472.8,412.1L471.3,430.3L475.9,439.9L488.1,451.5L507.5,438.5L510.6,427.6L524.5,420.2L530.4,434.6L546.9,444.4L554.8,440.2L555.6,432.6L570.5,424.6L575.9,412.2L585.5,423.4L605.2,407.6L618.4,414.7L630.0,408.7L650.8,424.6L648.5,446.8L642.8,454.6L631.3,459.3L631.2,464.5L622.1,480.6L622.7,496.4L603.7,493.8L593.0,497.2L589.0,512.3L576.7,519.1L561.5,517.3L552.8,513.1L537.3,518.4L529.4,517.5L517.4,530.4L515.6,544.9L507.8,550.9L495.6,552.4L486.3,539.5L480.2,541.7L461.0,527.2L449.4,524.2L443.8,534.0L432.1,538.8L427.3,547.3L406.6,559.7L385.7,547.0L377.6,560.3L352.2,568.9L347.2,584.4L333.8,592.4L318.1,586.2L309.4,574.9L298.0,576.2L292.8,571.1L273.1,574.3L268.1,566.7L249.6,554.8L238.5,543.8L227.7,539.0L217.9,548.9L209.1,551.5L199.6,543.6L206.4,533.5L205.3,520.5L209.4,497.1L222.0,498.7L224.0,509.9L236.6,517.3L252.1,512.6L262.8,512.2L274.0,498.1L289.9,490.0L312.5,493.4L319.4,486.3L325.8,490.9L337.1,475.7L323.2,459.3L322.2,433.4L333.2,439.0L342.4,438.4L345.4,427.6L358.9,428.1L369.0,443.8L374.7,437.3L379.3,419.6L386.9,413.3L385.8,404.6L395.1,387.5L395.6,380.7Z","cx":422.4,"cy":484.8},{"code":"samc","name":"삼척시","d":"M984.0,813.5L973.6,814.1L958.2,823.2L954.1,830.9L944.4,829.4L924.5,853.1L927.6,868.8L907.3,870.2L899.1,855.3L894.3,855.0L878.7,842.5L868.8,838.4L865.3,831.0L868.7,817.8L858.9,800.9L839.4,797.9L826.8,783.1L825.7,766.3L832.0,754.7L833.7,743.5L829.3,736.4L835.6,728.2L826.7,719.3L832.6,711.2L824.4,706.5L812.0,714.0L803.6,726.6L802.4,740.2L798.0,749.8L799.7,759.9L792.3,762.7L788.3,775.4L792.3,762.7M788.3,775.4L782.5,755.4L776.1,749.1L776.1,740.8L767.5,731.1L773.4,717.9L770.5,708.8L761.5,708.5L766.7,686.0L771.4,676.5L782.9,670.5L783.8,659.4L800.9,648.0L809.5,650.2L824.8,659.0L831.5,656.9L846.6,645.4L859.8,645.1L868.8,641.2L885.6,646.8L896.4,633.9L908.3,645.3L912.7,667.0L935.3,686.0L935.5,695.5L942.4,706.5L943.5,717.7L957.5,727.9L956.9,733.7L969.0,740.7L968.1,748.6L980.9,765.0L974.2,770.4L977.1,777.8L974.4,796.4L984.0,813.5Z","cx":866.7,"cy":743.9},{"code":"sc","name":"속초시","d":"M588.1,239.6L607.3,246.7L613.4,239.1L627.3,232.2L644.9,228.9L649.5,223.9L654.7,241.7L660.0,249.7L659.9,262.0L643.4,262.2L638.5,268.5L627.9,268.9L625.8,275.1L609.5,274.5L598.2,284.6L598.0,274.6L588.2,267.4L578.6,253.0L588.1,239.6Z","cx":621.1,"cy":254.3},{"code":"tb","name":"태백시","d":"M868.8,838.4L860.5,842.5L855.5,856.2L820.4,847.2L810.7,850.9L803.9,841.4L794.3,843.0L788.9,856.7L779.9,859.2L774.6,853.2L779.9,843.1L773.8,831.0L780.0,825.4L784.4,812.6L792.3,805.4L788.3,775.4L792.3,762.7L799.7,759.9L798.0,749.8L802.4,740.2L803.6,726.6L812.0,714.0L824.4,706.5L832.6,711.2L826.7,719.3L835.6,728.2L829.3,736.4L833.7,743.5L832.0,754.7L825.7,766.3L826.8,783.1L839.4,797.9L858.9,800.9L868.7,817.8L865.3,831.0L868.8,838.4Z","cx":817.6,"cy":793.6},{"code":"dh","name":"동해시","d":"M859.1,563.6L878.0,579.8L880.0,590.1L876.2,599.8L880.2,610.0L896.4,633.9L885.6,646.8L868.8,641.2L859.8,645.1L846.6,645.4L831.5,656.9L824.8,659.0L809.5,650.2L822.5,634.8L822.0,625.1L811.4,614.2L816.2,602.8L827.1,598.0L835.5,600.5L844.0,594.4L849.5,580.0L859.1,563.6Z","cx":849.2,"cy":615.2},{"code":"gn","name":"강릉시","d":"M859.1,563.6L849.5,580.0L844.0,594.4L835.5,600.5L827.1,598.0L816.2,602.8L810.1,596.3L801.5,601.0L787.2,592.7L783.2,574.1L773.6,572.6L767.0,588.5L767.7,597.4L762.4,613.1L748.0,617.8L740.7,611.2L742.8,604.1L733.6,597.7L718.5,595.9L700.9,602.1L687.7,590.9L692.1,571.3L704.0,573.1L706.4,564.9L714.6,561.5L711.2,547.3L713.2,537.6L726.6,527.9L717.0,490.0L709.4,485.9L702.3,475.2L689.0,472.8L656.7,474.6L656.0,455.1L648.5,446.8L650.8,424.6L664.3,419.2L676.7,408.9L688.8,409.4L718.8,399.1L743.1,396.9L746.1,393.9L756.8,405.0L754.9,412.2L775.2,436.8L775.9,442.1L822.4,491.0L833.6,507.9L852.0,525.8L852.3,533.9L846.7,543.5L851.0,555.3L859.1,563.6Z","cx":754.2,"cy":527.3},{"code":"wj","name":"원주시","d":"M313.3,656.4L321.7,651.5L330.3,658.0L333.3,675.6L341.1,675.9L340.9,649.9L344.8,639.9L357.6,635.4L359.8,628.3L369.6,626.5L377.4,645.9L399.1,644.6L423.9,650.1L440.2,672.1L429.2,679.4L431.3,688.6L416.5,698.9L414.4,711.1L422.9,724.1L447.4,728.9L448.3,739.5L461.8,743.8L471.4,742.0L483.3,732.0L491.8,742.1L484.8,757.8L464.9,775.9L452.2,772.8L446.3,780.1L432.2,787.6L415.3,790.4L411.2,783.1L415.2,776.0L406.8,766.1L406.6,760.2L392.0,752.7L376.0,758.9L364.6,770.3L371.3,790.6L366.7,803.3L359.1,802.1L356.3,810.5L343.7,803.7L339.0,807.9L307.9,814.5L298.7,807.5L292.7,797.3L290.2,775.3L290.6,758.5L294.6,752.8L293.1,731.2L299.0,725.7L295.3,713.6L295.1,693.5L302.8,691.2L313.3,656.4Z","cx":377.7,"cy":728.7},{"code":"cw","name":"춘천시","d":"M357.0,321.9L358.8,335.7L371.0,341.7L378.9,327.9L392.3,334.6L391.5,342.3L410.9,341.6L406.5,349.2L391.2,354.7L388.6,372.8L395.6,380.7L395.1,387.5L385.8,404.6L386.9,413.3L379.3,419.6L374.7,437.3L369.0,443.8L358.9,428.1L345.4,427.6L342.4,438.4L333.2,439.0L322.2,433.4L323.2,459.3L337.1,475.7L325.8,490.9L319.4,486.3L312.5,493.4L289.9,490.0L274.0,498.1L262.8,512.2L252.1,512.6L236.6,517.3L224.0,509.9L222.0,498.7L209.4,497.1L201.3,502.2L187.0,495.9L202.9,479.8L193.0,462.9L199.1,453.3L194.7,445.5L197.7,435.5L210.5,428.1L219.9,417.1L227.1,417.7L234.3,400.3L232.6,382.5L228.0,373.9L202.8,366.9L200.8,348.9L202.8,338.9L211.0,337.6L217.5,327.9L212.8,303.7L225.7,305.8L237.9,322.0L249.3,320.5L249.2,336.3L259.8,329.8L269.6,328.8L275.3,336.3L286.0,328.5L299.5,334.7L309.9,353.2L324.1,349.1L337.3,339.6L335.3,321.7L357.0,321.9Z","cx":291.4,"cy":400.9}]};
 
 /* ════════ DATA LAYER (크롤링 어댑터) ════════ */
-const REGIONS=[['cw','춘천시',232000,46.5],['wj','원주시',295000,47.8],['gn','강릉시',184000,40.2],['dh','동해시',77000,38.5],['tb','태백시',37000,35.0],['sc','속초시',73000,39.8],['samc','삼척시',60000,36.4],['hc','홍천군',61000,43.0],['hs','횡성군',39000,41.2],['yw','영월군',33000,37.0],['pc','평창군',36000,41.5],['js','정선군',31000,38.8],['cwn','철원군',39000,42.0],['hch','화천군',20000,38.0],['yg','양구군',19000,36.5],['ij','인제군',26000,39.0],['gs','고성군',24000,40.5],['yy','양양군',24000,38.2]];
+// [code, name, electorate(선거인수), prevDemPct(민주 득표율)] — 제8회(2022) 강원 시도지사 NEC 개표결과 실데이터
+const REGIONS=[['cw','춘천시',244406,46.9],['wj','원주시',304060,50.2],['gn','강릉시',185804,42],['dh','동해시',76886,42.4],['tb','태백시',35236,46.7],['sc','속초시',71621,44.7],['samc','삼척시',57023,43.2],['hc','홍천군',60743,43.4],['hs','횡성군',41777,43.3],['yw','영월군',34371,45.6],['pc','평창군',37372,50.5],['js','정선군',32001,49.5],['cwn','철원군',37099,43.1],['hch','화천군',21055,44.2],['yg','양구군',18552,45.5],['ij','인제군',27939,48.3],['gs','고성군',24776,44.3],['yy','양양군',25359,41.7]];
 const REG_MAP=Object.fromEntries(REGIONS.map((r,i)=>[r[0],{name:r[1],elec:r[2],prev:r[3],idx:i}]));
 const STORE='gw_gov_v4',SNAP='gw_gov_v4_snap';
 const Data={ state:{},snapshot:null,pollTimer:null,
   init(){ try{this.state=JSON.parse(localStorage.getItem(STORE))||this.empty();}catch{this.state=this.empty();} try{this.snapshot=JSON.parse(localStorage.getItem(SNAP))||null;}catch{} },
-  empty(){ const s={}; REGIONS.forEach(r=>s[r[0]]={progress:0,dpk:0,ppp:0}); return s; },
+  empty(){ const s={}; REGIONS.forEach(r=>s[r[0]]={progress:0,dpk:0,ppp:0,turnout:0}); return s; },
   set(c,p){ this.state[c]={...this.state[c],...p}; this.persist(); },
   reset(){ this.state=this.empty(); this.persist(); },
   persist(){ localStorage.setItem(STORE,JSON.stringify(this.state)); },
   takeSnapshot(){ this.snapshot=JSON.parse(JSON.stringify(this.state)); localStorage.setItem(SNAP,JSON.stringify(this.snapshot)); },
-  adapters:{ standard:r=>r, nec(raw){ const o={}; (raw.regions||[]).forEach(r=>o[r.code]={progress:+r.countRate||0,dpk:+r.cand1Votes||0,ppp:+r.cand2Votes||0}); return o; } },
+  adapters:{
+    standard:r=>r,
+    // 중앙선관위 투·개표정보 OpenAPI(getXmntckSttusInfoInqire) JSON 응답 → 내부 스키마
+    // 정당명(jd0x)으로 민주/국힘 득표(dugsu0x) 매핑. 확정 데이터는 개표율 100% 처리.
+    nec(raw){
+      const NM=Object.fromEntries(REGIONS.map(r=>[r[1],r[0]]));
+      let items=raw?.response?.body?.items?.item||raw?.items||[];
+      if(!Array.isArray(items)) items=[items];
+      const o={};
+      items.forEach(it=>{
+        const code=NM[it.wiwName]; if(!code) return; // 합계·관외 등 제외
+        let dpk=0,ppp=0;
+        for(let i=1;i<=50;i++){
+          const k=String(i).padStart(2,'0'), party=it['jd'+k]; if(!party) continue;
+          const v=+it['dugsu'+k]||0;
+          if(party.includes('더불어민주')) dpk=v; else if(party.includes('국민의힘')) ppp=v;
+        }
+        o[code]={ progress:(+it.tusu>0?100:0), dpk, ppp };
+      });
+      return o;
+    }
+  },
   async fetchOnce(u,a='standard'){ const res=await fetch(u,{cache:'no-store'}); this.state=this.adapters[a](await res.json()); this.persist(); },
   startPolling(u,a='standard',sec=30){ this.stopPolling(); const t=async()=>{ try{this.takeSnapshot(); await this.fetchOnce(u,a); renderAll();}catch(e){console.warn(e);} }; t(); this.pollTimer=setInterval(t,sec*1000); },
   stopPolling(){ if(this.pollTimer){clearInterval(this.pollTimer); this.pollTimer=null;} },
@@ -515,34 +517,84 @@ const SAMPLE={cw:{progress:78.5,dpk:110000,ppp:74000},wj:{progress:65.2,dpk:1160
 /* ════════ CALC ════════ */
 function erf(x){ const s=x<0?-1:1; x=Math.abs(x); const t=1/(1+0.3275911*x); const y=1-(((((1.061405429*t-1.453152027)*t)+1.421413741)*t-0.284496736)*t+0.254829592)*t*Math.exp(-x*x); return s*y; }
 const normCdf=z=>0.5*(1+erf(z/Math.SQRT2));
-function regionCalc(code){
-  const m=REG_MAP[code],d=Data.state[code]||{progress:0,dpk:0,ppp:0};
-  const total=d.dpk+d.ppp,dPct=total>0?d.dpk/total*100:0,pPct=total>0?d.ppp/total*100:0;
-  const gapV=d.dpk-d.ppp,gapP=dPct-pPct,prog=d.progress||0;
+// 전체 유효율(양자유효표/개표분 투표) — 미개표 시군 추정에 사용
+let VALID_RATE=0.97;
+function calcValidRate(){ let c=0,b=0; REGIONS.forEach(r=>{ const d=Data.state[r[0]]||{}; const t=(+d.turnout||0)||REG_MAP[r[0]].elec; const cc=(+d.dpk||0)+(+d.ppp||0); const bb=t*((+d.progress||0)/100); if(bb>0&&cc>0){ c+=cc; b+=bb; } }); return (b>0&&c<=b)?Math.min(1,Math.max(0.9,c/b)):0.97; }
+
+function regionCalc(code, stateWideSwing = 0){
+  const m=REG_MAP[code], d=Data.state[code]||{progress:0,dpk:0,ppp:0,turnout:0};
+  const dpk=+d.dpk||0, ppp=+d.ppp||0, total=dpk+ppp;
+  const dPct=total>0?dpk/total*100:0, pPct=total>0?ppp/total*100:0;
+  const gapV=dpk-ppp, gapP=dPct-pPct, prog=+d.progress||0;
   const lead=total===0?'none':Math.abs(gapP)<0.5?'tie':gapP>0?'dpk':'ppp';
-  const projTotal=prog>0?Math.round(total/(prog/100)):total;
-  const projD=total>0?Math.round(projTotal*dPct/100):0,projP=total>0?Math.round(projTotal*pPct/100):0;
+  const T=(+d.turnout||0)||m.elec;                          // 확정 투표자수(없으면 2022 선거인수)
+  const V = T*VALID_RATE;                                    // 총 양자유효표 = 확정 투표자수 × 유효율(상한 = 투표자수)
+  const remaining = Math.max(0, V-total);                    // 남은 양자유효표(확정값 기반, 폭주 없음)
+  // 개표 진행률에 따라 현재 지역의 득표율(regionTarget)과 주 단위 스윙이 반영된 목표치(swingTarget)를 보간합니다.
+  const weight = Math.min(1, prog / 10); // 개표율 10% 도달 시 자체 득표율 100% 반영
+  const regionTarget = dPct;
+  const swingTarget = m.prev + stateWideSwing;
+  const sRem = total>0 ? (regionTarget*weight + swingTarget*(1-weight))/100 : (swingTarget/100);
+  const projD=Math.round(dpk+remaining*sRem), projP=Math.round(ppp+remaining*(1-sRem)), projTot=projD+projP;
+  const projGapP=projTot>0?(projD-projP)/projTot*100:0;
   const swing=total>0?dPct-m.prev:0;
-  let mom=null; if(Data.snapshot&&Data.snapshot[code]){ const s=Data.snapshot[code],st=s.dpk+s.ppp; if(st>0&&total>0) mom=dPct-(s.dpk/st*100); }
-  return {code,name:m.name,elec:m.elec,prog,dpk:d.dpk,ppp:d.ppp,total,dPct,pPct,gapV,gapP,lead,projTotal,projD,projP,projGapP:gapP,swing,mom,done:prog>=100};
+  let mom=null; if(Data.snapshot&&Data.snapshot[code]){ const s=Data.snapshot[code],st=(+s.dpk||0)+(+s.ppp||0); if(st>0&&total>0) mom=dPct-((+s.dpk||0)/st*100); }
+  return {code,name:m.name,elec:m.elec,turnout:T,prog,dpk,ppp,total,dPct,pPct,gapV,gapP,lead,V,remaining,sRem,projD,projP,projTot,projGapP,swing,mom,done:prog>=100};
 }
 function aggregate(){
-  let dpk=0,ppp=0,done=0,leadD=0,leadP=0,elecSum=0,weighted=0,pjD=0,pjP=0,remainEst=0;
-  REGIONS.forEach(r=>{ const c=regionCalc(r[0]); dpk+=c.dpk;ppp+=c.ppp;elecSum+=c.elec;weighted+=c.prog*c.elec;pjD+=c.projD;pjP+=c.projP; if(c.done)done++; if(c.lead==='dpk')leadD++; else if(c.lead==='ppp')leadP++; remainEst+=Math.max(0,c.projTotal-c.total); });
-  const totV=dpk+ppp,dPct=totV>0?dpk/totV*100:0,pPct=totV>0?ppp/totV*100:0,totalProg=elecSum>0?weighted/elecSum:0;
-  const pjTot=pjD+pjP,pjDPct=pjTot>0?pjD/pjTot*100:0,pjPPct=pjTot>0?pjP/pjTot*100:0,pjGapP=pjDPct-pjPPct;
-  const remainFrac=Math.max(0,(100-totalProg)/100),sigma=Math.max(0.4,6.0*Math.sqrt(remainFrac)+0.5);
-  const winD=totV>0?normCdf(pjGapP/sigma):0.5,winP=1-winD;
-  return {dpk,ppp,totV,dPct,pPct,gapV:dpk-ppp,gapP:dPct-pPct,done,leadD,leadP,totalProg,remainEst,pjD,pjP,pjDPct,pjPPct,pjGapP,winD,winP,sigma};
+  VALID_RATE=calcValidRate();
+  
+  // 1차 패스: 개표율이 1% 이상이고 500표 이상 개표된 신뢰할 수 있는 지역들로부터 주 단위 평균 스윙을 계산합니다.
+  let swingSum = 0, weightSum = 0;
+  REGIONS.forEach(r => {
+    const code = r[0];
+    const m = REG_MAP[code];
+    const d = Data.state[code] || {};
+    const dpk = +d.dpk || 0, ppp = +d.ppp || 0, total = dpk + ppp;
+    const prog = +d.progress || 0;
+    if (total > 500 && prog >= 1.0) {
+      const dPct = dpk / total * 100;
+      const swing = dPct - m.prev;
+      const w = +d.turnout || m.elec;
+      swingSum += swing * w;
+      weightSum += w;
+    }
+  });
+  const stateWideSwing = weightSum > 0 ? swingSum / weightSum : 0;
+
+  let dpk=0,ppp=0,done=0,leadD=0,leadP=0,Tsum=0,counted=0,pjD=0,pjP=0,R=0,remDpk=0;
+  REGIONS.forEach(r=>{ const c=regionCalc(r[0], stateWideSwing);
+    dpk+=c.dpk; ppp+=c.ppp; Tsum+=c.turnout; counted+=c.turnout*(c.prog/100);
+    pjD+=c.projD; pjP+=c.projP; R+=c.remaining; remDpk+=c.remaining*c.sRem;
+    if(c.done)done++; if(c.lead==='dpk')leadD++; else if(c.lead==='ppp')leadP++; });
+  const totV=dpk+ppp, dPct=totV>0?dpk/totV*100:0, pPct=totV>0?ppp/totV*100:0;
+  const totalProg=Tsum>0?counted/Tsum*100:0;
+  const pjTot=pjD+pjP, pjDPct=pjTot>0?pjD/pjTot*100:0, pjPPct=pjTot>0?pjP/pjTot*100:0, pjGapP=pjDPct-pjPPct;
+
+  /* ── 통계적 승률 (남은표 = 확정 투표자수 − 개표분, 정규분포 모델) ──
+     최종 표차 M = D + (2P−1)·R,  P~N(pHat, σ_P²)
+     σ_P² = 구조적분산(지역편차) + 표집분산  →  개표 진행(R↓)에 따라 자연히 확신도 수렴 */
+  const D=dpk-ppp;                              // 현재 표차(우상호−김진태)
+  const pHat=R>0?remDpk/R:0.5;                  // 남은표 우상호 기대점유율
+  const SIGMA_STRUCT=0.04;                      // 지역간 구조적 변동(±4%p)
+  let winD;
+  if(totV===0) winD=0.5;
+  else if(R<=0) winD = D>0?1:(D<0?0:0.5);
+  else { const sigmaP=Math.sqrt(SIGMA_STRUCT*SIGMA_STRUCT + pHat*(1-pHat)/R);
+         const M=D+(2*pHat-1)*R; winD=normCdf(M/(2*R*sigmaP)); }
+  const winP=1-winD;
+  const Vtot=totV+R;
+  const marginSD=(R>0&&Vtot>0)?200*Math.sqrt(SIGMA_STRUCT*SIGMA_STRUCT+pHat*(1-pHat)/R)*R/Vtot:0; // 예상격차 ±%p
+  return {dpk,ppp,totV,dPct,pPct,gapV:D,gapP:dPct-pPct,done,leadD,leadP,totalProg,remainEst:Math.round(R),pjD,pjP,pjDPct,pjPPct,pjGapP,pHat,winD,winP,marginSD};
 }
 function raceCall(a){
   if(a.totV===0) return {key:'toss',cls:'cb-toss',ico:'○',text:'집계 대기',meta:'데이터가 입력되면 판정합니다.'};
   const dd=a.pjGapP>0,who=dd?'우상호':'김진태',wp=Math.max(a.winD,a.winP)*100,prog=a.totalProg,ag=Math.abs(a.pjGapP);
   let callAt=Math.min(99.5,prog+Math.max(2,(10-ag)*4));
-  if(wp>=99.5&&prog>=80) return {key:'win',cls:dd?'cb-win-d':'cb-win-p',ico:'★',text:`${who} 당선확정`,meta:`예측 승률 <b>${wp.toFixed(1)}%</b> · 개표율 ${prog.toFixed(1)}% · 사실상 확정.`};
-  if(wp>=95) return {key:'likely',cls:dd?'cb-win-d':'cb-win-p',ico:'◆',text:`${who} 당선유력`,meta:`승률 <b>${wp.toFixed(1)}%</b> · 예상 격차 ${ag.toFixed(1)}%p · 콜 예상 개표율 <b>${callAt.toFixed(0)}%</b>.`};
-  if(wp>=80) return {key:'lead',cls:dd?'cb-d':'cb-p',ico:'▲',text:`${who} 우세`,meta:`승률 <b>${wp.toFixed(1)}%</b> · 예상 격차 ${ag.toFixed(1)}%p · 추세 유지 시 우세.`};
-  if(wp>=60) return {key:'lean',cls:dd?'cb-d':'cb-p',ico:'△',text:`${who} 경합우세`,meta:`승률 <b>${wp.toFixed(1)}%</b> · 예상 격차 ${ag.toFixed(1)}%p · 경합권.`};
+  if(wp>=99.5&&prog>=50) return {key:'win',cls:dd?'cb-win-d':'cb-win-p',ico:'★',text:`${who} 당선확정`,meta:`예측 승률 <b>${wp.toFixed(1)}%</b> · 개표율 ${prog.toFixed(2)}% · 사실상 확정.`};
+  if(wp>=95&&prog>=20) return {key:'likely',cls:dd?'cb-win-d':'cb-win-p',ico:'◆',text:`${who} 당선유력`,meta:`승률 <b>${wp.toFixed(1)}%</b> · 예상 격차 ${ag.toFixed(1)}%p · 콜 예상 개표율 <b>${callAt.toFixed(0)}%</b>.`};
+  if(wp>=80&&prog>=5) return {key:'lead',cls:dd?'cb-d':'cb-p',ico:'▲',text:`${who} 우세`,meta:`승률 <b>${wp.toFixed(1)}%</b> · 예상 격차 ${ag.toFixed(1)}%p · 추세 유지 시 우세.`};
+  if(wp>=60&&prog>=2) return {key:'lean',cls:dd?'cb-d':'cb-p',ico:'△',text:`${who} 경합우세`,meta:`승률 <b>${wp.toFixed(1)}%</b> · 예상 격차 ${ag.toFixed(1)}%p · 경합권.`};
   return {key:'toss',cls:'cb-toss',ico:'≈',text:'초박빙 경합',meta:`승률 ${(a.winD*100).toFixed(0)} : ${(a.winP*100).toFixed(0)} · 예상 격차 ${ag.toFixed(1)}%p · 예단 불가.`};
 }
 
@@ -555,13 +607,67 @@ function mixRGB(c1,c2,t){ return '#'+hx(Math.round(lerp(c1[0],c2[0],t)))+hx(Math
 const DPK_WEAK=[74,134,255],DPK_STRONG=[12,74,235], PPP_WEAK=[255,92,98],PPP_STRONG=[224,16,28];
 function buildMap(){
   svg.setAttribute('viewBox',`0 0 ${GW_GEO.w} ${GW_GEO.h}`);
+
+  // 각 시군 텍스트의 중심점(cx, cy)을 다각형 영역의 실제 시각적 중앙으로 미세 조정
+  const adjustCoords = (code, cx, cy) => {
+    const r = GW_GEO.regions.find(reg => reg.code === code);
+    if (r) { r.cx = cx; r.cy = cy; }
+  };
+  
+  // 1. 소형 시군 외곽 배치 및 지시선 연결
+  adjustCoords('sc', 710, 240); // 속초 (바다 방향)
+  adjustCoords('dh', 925, 600); // 동해 (바다 방향)
+  adjustCoords('tb', 820, 845); // 태백 (남쪽 외곽 방향)
+
+  // 2. 가려지거나 경계선에 걸치는 시군들 중앙 정렬 보정
+  adjustCoords('samc', 875, 735); // 삼척 (몸통 중앙)
+  adjustCoords('yy', 645, 345);   // 양양 (원래 중앙)
+  adjustCoords('js', 728, 675);   // 정선 (원래 중앙)
+  adjustCoords('hs', 425, 620);   // 횡성 (원래 중앙에 가깝게)
+  adjustCoords('yw', 595, 765);   // 영월 (원래 중앙에 가깝게)
+  adjustCoords('hc', 430, 480);   // 홍천 (원래 중앙에 가깝게)
+  adjustCoords('wj', 360, 720);   // 원주 (원래 중앙에 가깝게)
+  adjustCoords('gs', 565, 110);   // 고성 (북동쪽 해안선 근처)
+  adjustCoords('hch', 255, 265);  // 화천 (원래 중앙)
+  adjustCoords('yg', 398, 260);   // 양구 (원래 중앙)
+
+  // 각 지역의 크기에 부합하는 폰트 사이즈 맵핑
+  const FONT_SIZES = {
+    cw: { name: 22, mar: 18 },
+    wj: { name: 22, mar: 18 },
+    gn: { name: 22, mar: 18 },
+    hc: { name: 22, mar: 18 },
+    sc: { name: 22, mar: 18 },
+    dh: { name: 22, mar: 18 },
+    tb: { name: 22, mar: 18 },
+    gs: { name: 18, mar: 15 },
+    yy: { name: 18, mar: 15 },
+    ij: { name: 18, mar: 15 },
+    yg: { name: 17, mar: 14 },
+    hch: { name: 18, mar: 15 },
+    cwn: { name: 19, mar: 16 },
+    js: { name: 19, mar: 16 },
+    pc: { name: 20, mar: 17 },
+    yw: { name: 19, mar: 16 },
+    hs: { name: 19, mar: 16 },
+    samc: { name: 20, mar: 17 }
+  };
+
   let s='';
   GW_GEO.regions.forEach(r=>{
+    let line = '';
+    // 외곽 배치 시군(속초, 동해, 태백) 지시선 렌더링
+    if (r.code === 'sc') line = `<line x1="621.1" y1="254.3" x2="675" y2="240" stroke="var(--text-dim)" stroke-width="1.2" stroke-dasharray="3,3" />`;
+    if (r.code === 'dh') line = `<line x1="849.2" y1="615.2" x2="890" y2="600" stroke="var(--text-dim)" stroke-width="1.2" stroke-dasharray="3,3" />`;
+    if (r.code === 'tb') line = `<line x1="817.6" y1="793.6" x2="820" y2="830" stroke="var(--text-dim)" stroke-width="1.2" stroke-dasharray="3,3" />`;
+
+    const fs = FONT_SIZES[r.code] || { name: 22, mar: 18 };
     s+=`<g class="rg" data-code="${r.code}">
       <path d="${r.d}" fill="var(--panel-3)"></path>
+      ${line}
       <g class="rg-label">
-        <text class="rg-name" x="${r.cx}" y="${r.cy-3}" text-anchor="middle" font-size="17">${r.name}</text>
-        <text class="rg-mar" x="${r.cx}" y="${r.cy+16}" text-anchor="middle" font-size="14" fill="var(--muted)">—</text>
+        <text class="rg-name" x="${r.cx}" y="${r.cy-3}" text-anchor="middle" font-size="${fs.name}">${r.name}</text>
+        <text class="rg-mar" x="${r.cx}" y="${r.cy+19}" text-anchor="middle" font-size="${fs.mar}" fill="var(--muted)">—</text>
       </g></g>`;
   });
   svg.innerHTML=s;
@@ -582,7 +688,7 @@ function paintMap(){
     else if(c.lead==='tie'){ fill='#33406b'; mt='박빙'; mc='#fff'; }
     path.setAttribute('fill',fill);
     g.classList.toggle('done',c.done);
-    mar.textContent=c.prog>0?(c.lead==='none'?`${c.prog.toFixed(0)}%`:mt):'—';
+    mar.textContent=c.prog>0?(c.lead==='none'?'대기':mt):'—';
     mar.setAttribute('fill',mc);
   });
 }
@@ -594,12 +700,13 @@ function renderTable(){
   rows.sort((a,b)=>{ if(sortKey==='order')return a.i-b.i; const dir=sortDir,k={progress:'prog',dpk:'dPct',ppp:'pPct'}[sortKey];
     if(k)return(b[k]-a[k])*dir; if(sortKey==='gap')return(Math.abs(b.gapP)-Math.abs(a.gapP))*dir; if(sortKey==='proj')return(Math.abs(b.projGapP)-Math.abs(a.projGapP))*dir; if(sortKey==='swing')return(b.swing-a.swing)*dir; return 0; });
   tbody.innerHTML=rows.map(c=>{ const lc=c.lead==='dpk'?'lead-dpk':c.lead==='ppp'?'lead-ppp':'';
-    const gapTxt=c.total===0?'—':c.lead==='tie'?'박빙':`${c.gapV>0?'+':''}${c.gapV.toLocaleString()} <span style="opacity:.55">(${c.gapP>0?'+':''}${c.gapP.toFixed(1)})</span>`;
+    const tableGapP = (c.dPct.toFixed(1) - c.pPct.toFixed(1)).toFixed(1);
+    const gapTxt=c.total===0?'—':c.lead==='tie'?'박빙':`${c.gapV>0?'+':''}${c.gapV.toLocaleString()} <span style="opacity:.55">(${tableGapP>0?'+':''}${tableGapP})</span>`;
     const gcls=c.lead==='dpk'?'dpk':c.lead==='ppp'?'ppp':''; const projTxt=c.total===0?'—':`${c.projGapP>0?'+':''}${c.projGapP.toFixed(1)}%p`;
     const sw=c.total===0?'<span class="sw fl">—</span>':c.swing>0.3?`<span class="sw up">▲${c.swing.toFixed(1)}</span>`:c.swing<-0.3?`<span class="sw dn">▼${Math.abs(c.swing).toFixed(1)}</span>`:`<span class="sw fl">±0</span>`;
     const mm=c.mom===null?'<span class="mm fl">·</span>':c.mom>0.1?`<span class="mm up">▲${c.mom.toFixed(1)}</span>`:c.mom<-0.1?`<span class="mm dn">▼${Math.abs(c.mom).toFixed(1)}</span>`:`<span class="mm fl">=</span>`;
     const badge=c.done?'<span class="badge done">완료</span>':c.prog>0?'<span class="badge">개표중</span>':'<span class="badge">대기</span>';
-    return `<tr class="${lc}" data-code="${c.code}"><td class="rg-nm">${c.name}${badge}</td><td class="num pct">${c.prog.toFixed(1)}%</td><td class="num">${c.dpk.toLocaleString()}</td><td class="num pct ${c.lead==='dpk'?'lead':''}">${c.dPct.toFixed(1)}%</td><td class="num">${c.ppp.toLocaleString()}</td><td class="num pct ${c.lead==='ppp'?'lead':''}">${c.pPct.toFixed(1)}%</td><td class="num gp ${gcls}">${gapTxt}</td><td class="num pj">${projTxt}</td><td class="num">${sw}</td><td class="num">${mm}</td></tr>`;
+    return `<tr class="${lc}" data-code="${c.code}"><td class="rg-nm">${c.name}${badge}</td><td class="num pct">${c.prog.toFixed(2)}%</td><td class="num">${c.dpk.toLocaleString()}</td><td class="num pct ${c.lead==='dpk'?'lead':''}">${c.dPct.toFixed(1)}%</td><td class="num">${c.ppp.toLocaleString()}</td><td class="num pct ${c.lead==='ppp'?'lead':''}">${c.pPct.toFixed(1)}%</td><td class="num gp ${gcls}">${gapTxt}</td><td class="num">${sw}</td><td class="num">${mm}</td></tr>`;
   }).join('');
   document.querySelectorAll('th[data-sort]').forEach(th=>th.classList.toggle('active',th.dataset.sort===sortKey));
   tbody.querySelectorAll('tr').forEach(tr=>tr.addEventListener('click',()=>selectRegion(tr.dataset.code)));
@@ -625,21 +732,23 @@ function renderTop(){
 
   // gap tag
   const gN=$('gap-num'),gL=$('gap-lbl'); gN.className='v num';
+  const dispGapP = Math.abs(a.dPct.toFixed(1) - a.pPct.toFixed(1)).toFixed(1);
   if(a.totV===0){ gN.innerHTML='0.0<small style="font-size:.5em">%p</small>'; gL.textContent='격차 · 대기'; }
   else if(Math.abs(a.gapP)<0.05){ gN.innerHTML='0.0<small style="font-size:.5em">%p</small>'; gL.textContent='격차 · 동률'; }
-  else{ gN.innerHTML=`${Math.abs(a.gapP).toFixed(1)}<small style="font-size:.5em">%p</small>`; gN.classList.add(a.gapP>0?'d':'p'); gL.textContent=`격차 · ${Math.abs(a.gapV).toLocaleString()}표`; }
+  else{ gN.innerHTML=`${dispGapP}<small style="font-size:.5em">%p</small>`; gN.classList.add(a.gapP>0?'d':'p'); gL.textContent=`격차 · ${Math.abs(a.gapV).toLocaleString()}표`; }
 
-  $('bf-prog').textContent=a.totalProg.toFixed(1)+'%';
+  $('bf-prog').textContent=a.totalProg.toFixed(2)+'%';
 
   // stats
-  $('total-pct').textContent=a.totalProg.toFixed(1); $('total-fill').style.width=a.totalProg+'%';
+  $('total-pct').textContent=a.totalProg.toFixed(2); $('total-fill').style.width=a.totalProg+'%';
   $('total-counted').textContent=a.totV.toLocaleString()+' 표'; $('total-remain').textContent=fmt(a.remainEst)+' 표';
   $('done-count').textContent=a.done; $('lead-d').textContent=a.leadD; $('lead-p').textContent=a.leadP;
   const ov=$('overall-lead'),st=$('lead-status');
+  const roundedGapP = Math.abs(a.dPct.toFixed(1) - a.pPct.toFixed(1)).toFixed(1);
   if(a.totV===0){ ov.textContent='—'; ov.style.color='var(--text)'; st.textContent='집계 대기 중'; }
   else if(Math.abs(a.gapP)<0.5){ ov.textContent='박빙'; ov.style.color='var(--gold)'; st.textContent=`경합 ${18-a.leadD-a.leadP}곳`; }
-  else if(a.gapP>0){ ov.innerHTML=`우상호 <small style="font-size:13px;color:var(--text-dim)">+${a.gapP.toFixed(1)}%p</small>`; ov.style.color='var(--dpk-br)'; st.textContent='더불어민주당 우세'; }
-  else{ ov.innerHTML=`김진태 <small style="font-size:13px;color:var(--text-dim)">+${Math.abs(a.gapP).toFixed(1)}%p</small>`; ov.style.color='var(--ppp-br)'; st.textContent='국민의힘 우세'; }
+  else if(a.gapP>0){ ov.innerHTML=`우상호 <small style="font-size:13px;color:var(--text-dim)">+${roundedGapP}%p</small>`; ov.style.color='var(--dpk-br)'; st.textContent='더불어민주당 우세'; }
+  else{ ov.innerHTML=`김진태 <small style="font-size:13px;color:var(--text-dim)">+${roundedGapP}%p</small>`; ov.style.color='var(--ppp-br)'; st.textContent='국민의힘 우세'; }
 
   // projection
   $('pj-d-pct').textContent=a.pjDPct.toFixed(1); $('pj-p-pct').textContent=a.pjPPct.toFixed(1);
@@ -647,7 +756,7 @@ function renderTop(){
   $('pj-bar-d').style.width=a.pjDPct+'%'; $('pj-bar-p').style.width=a.pjPPct+'%';
   const note=$('proj-note');
   if(a.totV===0) note.textContent='데이터 입력 또는 샘플 시나리오를 주입하면 예측이 계산됩니다.';
-  else{ const lead=a.pjGapP>0?'우상호':'김진태',sc=a.pjGapP>0?'su':'sd'; note.innerHTML=`현재 추세 외삽 시 <span class="${sc}">${lead}</span> 예상 격차 <b>${Math.abs(a.pjGapP).toFixed(1)}%p</b> · 추정 잔여 ${fmt(a.remainEst)}표 · 불확실성 ±${a.sigma.toFixed(1)}%p (개표율 ${a.totalProg.toFixed(0)}%).`; }
+  else{ const lead=a.pjGapP>0?'우상호':'김진태',sc=a.pjGapP>0?'su':'sd'; note.innerHTML=`확정 투표자수 기준 <span class="${sc}">${lead}</span> 예상 격차 <b>${Math.abs(a.pjGapP).toFixed(1)}%p</b> · 남은 표 ${fmt(a.remainEst)} · 불확실성 ±${a.marginSD.toFixed(1)}%p (개표율 ${a.totalProg.toFixed(2)}%).`; }
 
   // gauge
   const arc=$('gauge-arc'),wpP=$('wp-pct'),wpW=$('wp-who'),wlD=a.winD>=a.winP,wp=Math.max(a.winD,a.winP),LEN=289;
@@ -666,12 +775,26 @@ function renderTop(){
 
   $('ts-stamp').textContent=new Date().toLocaleTimeString('ko-KR',{hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:false});
 }
-function renderAll(){ paintMap(); renderTable(); renderTop(); }
+function renderAll(){ VALID_RATE=calcValidRate(); paintMap(); renderTable(); renderTop(); }
 
 /* ════════ TOOLTIP ════════ */
 const tt=$('tt');
-function showTip(e,code){ const c=regionCalc(code);
-  $('tt-nm').textContent=c.name; $('tt-prog').textContent=c.prog.toFixed(1)+'%'+(c.done?' · 완료':'');
+function showTip(e,code){
+  // 주 단위 스윙 계산
+  let swingSum = 0, weightSum = 0;
+  REGIONS.forEach(r => {
+    const d = Data.state[r[0]] || {};
+    const dpk = +d.dpk || 0, ppp = +d.ppp || 0, total = dpk + ppp;
+    const prog = +d.progress || 0;
+    if (total > 500 && prog >= 1.0) {
+      const swing = (dpk/total*100) - REG_MAP[r[0]].prev;
+      const w = +d.turnout || REG_MAP[r[0]].elec;
+      swingSum += swing * w; weightSum += w;
+    }
+  });
+  const stateWideSwing = weightSum > 0 ? swingSum / weightSum : 0;
+  const c=regionCalc(code, stateWideSwing);
+  $('tt-nm').textContent=c.name; $('tt-prog').textContent=c.prog.toFixed(2)+'%'+(c.done?' · 완료':'');
   $('tt-d').textContent=`${c.dpk.toLocaleString()} (${c.dPct.toFixed(1)}%)`; $('tt-p').textContent=`${c.ppp.toLocaleString()} (${c.pPct.toFixed(1)}%)`;
   const g=$('tt-gap'); if(c.total===0)g.textContent='집계 전'; else if(c.lead==='tie')g.innerHTML='<span style="color:var(--gold)">박빙</span>'; else if(c.lead==='dpk')g.innerHTML=`<span class="ttd">우상호 +${c.gapP.toFixed(1)}%p</span>`; else g.innerHTML=`<span class="ttp">김진태 +${Math.abs(c.gapP).toFixed(1)}%p</span>`;
   $('tt-proj').textContent=c.total===0?'—':`${c.projGapP>0?'우상호':'김진태'} ${Math.abs(c.projGapP).toFixed(1)}%p`;
@@ -680,29 +803,40 @@ function showTip(e,code){ const c=regionCalc(code);
 }
 function hideTip(){ tt.classList.remove('show'); }
 
-/* ════════ INPUT ════════ */
-const inRegion=$('in-region'); REGIONS.forEach(r=>{ const o=document.createElement('option'); o.value=r[0]; o.textContent=r[1]; inRegion.appendChild(o); });
-function selectRegion(code){ inRegion.value=code; const d=Data.state[code]||{}; $('in-progress').value=d.progress||''; $('in-dpk').value=d.dpk||''; $('in-ppp').value=d.ppp||''; $('input').scrollIntoView({behavior:'smooth',block:'start'}); setTimeout(()=>$('in-progress').focus(),400); }
-$('btn-apply').addEventListener('click',()=>{ const c=inRegion.value; Data.set(c,{progress:Math.min(100,Math.max(0,parseFloat($('in-progress').value)||0)),dpk:Math.max(0,parseInt($('in-dpk').value)||0),ppp:Math.max(0,parseInt($('in-ppp').value)||0)}); renderAll(); });
-$('btn-clear').addEventListener('click',()=>{ const c=inRegion.value; Data.set(c,{progress:0,dpk:0,ppp:0}); $('in-progress').value='';$('in-dpk').value='';$('in-ppp').value=''; renderAll(); });
-$('btn-demo').addEventListener('click',()=>{ Data.state=JSON.parse(JSON.stringify(SAMPLE)); Data.persist(); renderAll(); });
-$('btn-snapshot').addEventListener('click',()=>{ Data.takeSnapshot(); renderAll(); alert('현재 상태를 모멘텀 기준 스냅샷으로 저장했습니다.'); });
-$('btn-reset').addEventListener('click',()=>{ if(confirm('전체 데이터를 0으로 리셋할까요?')){ Data.reset(); renderAll(); } });
-$('btn-export').addEventListener('click',()=>{ const b=new Blob([Data.export()],{type:'application/json'}); const u=URL.createObjectURL(b); const a=document.createElement('a'); a.href=u; a.download=`gw_gov_${Date.now()}.json`; a.click(); URL.revokeObjectURL(u); });
-$('btn-import').addEventListener('click',()=>$('file-import').click());
-$('file-import').addEventListener('change',e=>{ const f=e.target.files[0]; if(!f)return; const r=new FileReader(); r.onload=ev=>{ try{Data.import(ev.target.result); renderAll();}catch{alert('JSON 파싱 오류');} }; r.readAsText(f); });
-let curSrc='manual';
-document.querySelectorAll('.src-row .pill').forEach(p=>p.addEventListener('click',()=>{ document.querySelectorAll('.src-row .pill').forEach(x=>x.classList.remove('active')); p.classList.add('active'); curSrc=p.dataset.src; Data.stopPolling(); if(curSrc==='poll') Data.startPolling($('src-url').value||'./data.json','standard',30); }));
-$('btn-fetch').addEventListener('click',async()=>{ const u=$('src-url').value||'./data.json'; try{ await Data.fetchOnce(u,'standard'); renderAll(); alert('data.json 불러오기 완료'); }catch(e){ alert('불러오기 실패: '+e.message+'\\n(로컬 파일은 같은 폴더 + 서버 환경 필요)'); } });
+/* ════════ 데이터 로드 (개표현황 엑셀 → data.json · 자동 갱신) ════════ */
+function selectRegion(code){} // 입력 패널 제거됨: 지도/표 클릭 동작 없음
+
+// file:// 직접 열기 대비 — xlsx2json.js 가 아래 블록을 자동 갱신
+const BAKED_DATA = /*LIVE_DATA_START*/{"_updatedAt":"2026-06-03T13:33:48.684Z","_source":"개표현황.xlsx + 투표현황.xlsx","cw":{"progress":9.59,"dpk":9442,"ppp":5413,"turnout":157330},"wj":{"progress":17.32,"dpk":12692,"ppp":18975,"turnout":185486},"gn":{"progress":13.2,"dpk":9326,"ppp":5682,"turnout":115761},"dh":{"progress":23.93,"dpk":6898,"ppp":4216,"turnout":47110},"tb":{"progress":78.54,"dpk":8624,"ppp":8799,"turnout":22671},"sc":{"progress":31.08,"dpk":6303,"ppp":7128,"turnout":44102},"samc":{"progress":34.01,"dpk":7197,"ppp":5313,"turnout":37601},"hc":{"progress":29.94,"dpk":6755,"ppp":4949,"turnout":39965},"hs":{"progress":19.74,"dpk":3243,"ppp":2389,"turnout":29256},"yw":{"progress":10.95,"dpk":1283,"ppp":1200,"turnout":23335},"pc":{"progress":37.72,"dpk":5912,"ppp":3791,"turnout":26211},"js":{"progress":22.19,"dpk":3034,"ppp":2026,"turnout":23534},"cwn":{"progress":35.57,"dpk":5536,"ppp":2827,"turnout":24024},"hch":{"progress":32.11,"dpk":2770,"ppp":1696,"turnout":14210},"yg":{"progress":67.62,"dpk":4509,"ppp":3956,"turnout":12816},"ij":{"progress":36.36,"dpk":4232,"ppp":2504,"turnout":18980},"gs":{"progress":27.64,"dpk":2788,"ppp":1894,"turnout":17413},"yy":{"progress":48.78,"dpk":3807,"ppp":4874,"turnout":18213}}/*LIVE_DATA_END*/;
+
+function applyData(j){
+  if(!j) return false;
+  const hasAny=Object.keys(j).some(k=>!k.startsWith('_'));
+  if(!hasAny) return false;
+  Data.snapshot=JSON.parse(JSON.stringify(Data.state||{})); // 직전 대비 모멘텀
+  const next=Data.empty();
+  Object.keys(next).forEach(c=>{ if(j[c]) next[c]={progress:Math.min(100,Math.max(0,+j[c].progress||0)),dpk:Math.max(0,+j[c].dpk||0),ppp:Math.max(0,+j[c].ppp||0),turnout:Math.max(0,+j[c].turnout||0)}; });
+  Data.state=next;
+  const el=$('data-stamp');
+  if(el){ const t=j._updatedAt?new Date(j._updatedAt):new Date(); el.textContent='데이터 '+t.toLocaleTimeString('ko-KR',{hour:'2-digit',minute:'2-digit',hour12:false})+' 갱신'; }
+  renderAll(); return true;
+}
+async function loadData(){
+  try{ const r=await fetch('./data.json?'+Date.now(),{cache:'no-store'}); if(r.ok) return applyData(await r.json()); }catch(e){}
+  return false;
+}
 document.querySelectorAll('th[data-sort]').forEach(th=>th.addEventListener('click',()=>{ const k=th.dataset.sort; if(sortKey===k)sortDir*=-1; else{sortKey=k;sortDir=-1;} renderTable(); }));
 $('theme-toggle').addEventListener('click',()=>{ const cur=document.documentElement.dataset.theme; document.documentElement.dataset.theme=cur==='dark'?'light':'dark'; localStorage.setItem('gw_theme',document.documentElement.dataset.theme); });
 const stTheme=localStorage.getItem('gw_theme'); if(stTheme) document.documentElement.dataset.theme=stTheme;
-const navLinks=[...document.querySelectorAll('nav.chips a')],secs=['board','projection','regions','input'].map(id=>$(id));
+const navLinks=[...document.querySelectorAll('nav.chips a')],secs=['board','projection','regions'].map(id=>$(id));
 const spy=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ const id=e.target.id; navLinks.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+id)); } }),{rootMargin:'-45% 0px -50% 0px'}); secs.forEach(s=>s&&spy.observe(s));
 const rev=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); rev.unobserve(e.target); } }),{threshold:.06}); document.querySelectorAll('.reveal').forEach(el=>rev.observe(el));
 
 /* BOOT */
-Data.init(); buildMap(); renderAll();
+Data.state=Data.empty(); buildMap();
+if(!applyData(BAKED_DATA)) renderAll();   // 베이크 데이터 즉시 표시(file://)
+loadData();                               // 서버/Pages면 data.json 으로 덮어씀
+setInterval(loadData, 20000);             // 20초마다 자동 갱신
 setInterval(()=>{ $('ts-stamp').textContent=new Date().toLocaleTimeString('ko-KR',{hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:false}); },1000);
 </script>
 </body>
